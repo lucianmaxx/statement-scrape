@@ -87,7 +87,10 @@ def _download_range(browser, start, end):
         _download_short_range(browser, start, end)
         for (start, end) in _split_range(start, end)
         ]
-    return pd.concat(chunks, ignore_index=True, verify_integrity=True)
+    
+    combined = pd.concat(chunks, ignore_index=True, verify_integrity=True)
+    combined = combined.drop(['Unnamed: 8'], axis=1)
+    return combined
 
 
 if __name__ == '__main__':
