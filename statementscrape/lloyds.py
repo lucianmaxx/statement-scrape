@@ -48,8 +48,7 @@ def _login():
         if 'lnkAccName' in link.attrs.get('id', ''):
             accounts[link.text] = link
     
-    print('Accounts:')
-    print(list(accounts))
+    print('Accounts:', list(accounts))
     
     account = input('Account: ')
     
